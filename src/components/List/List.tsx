@@ -94,22 +94,22 @@ export const List: React.FC<ListProps> = ({
       {localData.map((section, sectionIndex) => (
         <div key={`section-${sectionIndex}`}>
           <SectionHeader
-            collapsed={section.collapsed}
-            isFirstSection={sectionIndex === 0}
-            noSearch={disableSearch}
+            $collapsed={section.collapsed}
+            $isFirstSection={sectionIndex === 0}
+            $noSearch={disableSearch}
             onClick={() => toggleSection(sectionIndex)}
           >
             <SectionTitle>{section.title}</SectionTitle>
-            <SectionIcon collapsed={section.collapsed}>
+            <SectionIcon $collapsed={section.collapsed}>
               <ChevronIcon />
             </SectionIcon>
           </SectionHeader>
-          <SectionContent collapsed={section.collapsed}>
+          <SectionContent $collapsed={section.collapsed}>
             {section.items.map((item, itemIndex) => {
               return (
                 <ListItem
                   key={`item-${item.id || itemIndex}`}
-                  selected={item.selected}
+                  $selected={item.selected}
                   onClick={() => handleItemClick(item)}
                 >
                   {renderAvatar ? (

@@ -52,9 +52,9 @@ export const SearchInput = styled.input`
 `;
 
 export const SectionHeader = styled.div<{
-  collapsed?: boolean;
-  isFirstSection?: boolean;
-  noSearch?: boolean;
+  $collapsed?: boolean;
+  $isFirstSection?: boolean;
+  $noSearch?: boolean;
 }>`
   display: flex;
   justify-content: space-between;
@@ -62,7 +62,7 @@ export const SectionHeader = styled.div<{
   padding: ${theme.spacing.sm} ${theme.spacing.lg};
   border: solid;
   border-width: ${(props) =>
-    props.isFirstSection && props.noSearch
+    props.$isFirstSection && props.$noSearch
       ? "0px 0px 1px 0px"
       : "1px 0px 1px 0px"};
   border-color: ${theme.colors.border.light};
@@ -78,31 +78,31 @@ export const SectionTitle = styled.h3`
   color: ${theme.colors.text.textLight};
 `;
 
-export const SectionIcon = styled.div<{ collapsed?: boolean }>`
-  transform: ${({ collapsed }) =>
-    collapsed ? "rotate(90deg)" : "rotate(180deg)"};
+export const SectionIcon = styled.div<{ $collapsed?: boolean }>`
+  transform: ${({ $collapsed }) =>
+    $collapsed ? "rotate(90deg)" : "rotate(180deg)"};
   transition: transform 0.2s ease;
 `;
 
-export const SectionContent = styled.div<{ collapsed?: boolean }>`
-  display: ${({ collapsed }) => (collapsed ? "none" : "block")};
+export const SectionContent = styled.div<{ $collapsed?: boolean }>`
+  display: ${({ $collapsed }) => ($collapsed ? "none" : "block")};
 `;
 
-export const ListItem = styled.div<{ selected?: boolean }>`
+export const ListItem = styled.div<{ $selected?: boolean }>`
   display: flex;
   align-items: center;
   margin: ${theme.spacing.sm};
   border-radius: ${theme.borderRadius.medium};
   padding: ${theme.spacing.sm};
   cursor: pointer;
-  background-color: ${({ selected }) =>
-    selected ? theme.colors.primary.primary200 : "transparent"};
-  color: ${({ selected: selected }) =>
-    selected ? theme.colors.text.textPrimary : theme.colors.text.textDark};
+  background-color: ${({ $selected }) =>
+    $selected ? theme.colors.primary.primary200 : "transparent"};
+  color: ${({ $selected }) =>
+    $selected ? theme.colors.text.textPrimary : theme.colors.text.textDark};
 
   &:hover {
-    background-color: ${({ selected: selected }) =>
-      selected
+    background-color: ${({ $selected }) =>
+      $selected
         ? theme.colors.primary.primary100
         : theme.colors.background.secondaryHover};
   }
