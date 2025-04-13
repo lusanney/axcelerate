@@ -1,0 +1,59 @@
+/* App-specific styles */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #20374b;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #5a6a7a;
+}
+
+.demo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.variant-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+}
+
+.variant-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #444;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .demo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .variant-container {
+    width: 100%;
+  }
+}
